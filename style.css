@@ -135,9 +135,11 @@ header .hamburger {
 
 header .mobile__menu {
   position: absolute;
-  transform: translateX(150%);
+  transform: scale(0) translateX(150%);
   top: 120px;
+  width: 80%;
   max-width: 300px;
+  right: 100px;
   transition: all 500ms ease-in-out;
   opacity: 0;
   background-color: var(--white);
@@ -151,8 +153,7 @@ header .mobile__menu.active {
   opacity: 1;
   padding: 2rem;
   right: 40px;
-  width: 80%;
-  transform: translateX(0);
+  transform: scale(1) translateX(0);
 }
 
 header .mobile__menu::before {
