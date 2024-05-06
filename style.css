@@ -67,6 +67,7 @@ h2 {
 body > .container {
   max-width: 1440px;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 
 header {
