@@ -67,7 +67,12 @@ h2 {
 body > .container {
   max-width: 1440px;
   overflow-x: hidden;
-  margin: 0 auto;
+}
+
+@media screen and (min-width: 1440px) {
+  body > .container {
+    margin: 0 auto;
+  }
 }
 
 header {
@@ -88,6 +93,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  transition: all 0.3s ease;
 }
 
 @media screen and (min-width: 768px) {
@@ -136,25 +142,33 @@ header .hamburger {
 
 header .mobile__menu {
   position: absolute;
-  transform: scale(0) translateX(150%);
-  top: 120px;
+  top: 0;
+  right: 0;
   width: 80%;
+  transform: scale(0) translateX(150%);
   max-width: 300px;
-  right: 100px;
   transition: all 500ms ease-in-out;
   opacity: 0;
   background-color: var(--white);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: -1;
 }
 
 header .mobile__menu.active {
   opacity: 1;
   padding: 2rem;
-  right: 40px;
+  z-index: 999;
+  top: 100px;
+  right: 35px;
   transform: scale(1) translateX(0);
+}
+
+@media screen and (min-width: 768px) {
+  header .mobile__menu.active {
+    top: 120px;
+  }
 }
 
 header .mobile__menu::before {
